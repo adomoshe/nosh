@@ -1,5 +1,19 @@
+html {
+    background-image: url(../images/photo-1506368083636-6defb67639a7.jpeg);
+    background-size: cover;
+}
+
+body {
+    background-color: transparent;
+}
+
+.container {
+    background-color: transparent;
+}
+
 #logo-banner {
     margin-bottom: 0px;
+    border-bottom: 2px solid #fefefe;
 }
 
 .navbar {
