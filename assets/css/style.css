@@ -28,3 +28,15 @@ body {
     width: 100%;
     height: 7em;
 }
+
+.card {
+    margin-bottom: 1em;
+}
+
+#search-icon {
+    margin-right: 0.5em;
+}
+
+#user-input {
+    width: 100%;
+}
