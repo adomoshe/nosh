@@ -13,40 +13,46 @@
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/sticky-footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
+    <!-- Jumbotron Header -->
+    <div class="jumbotron" id="logo-banner">
+        <h1 class="text-center">/näSH/</h1>
+        <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
+    </div>   
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="assets/images/noshmini.png" width="30" height="30" class="d-inline-block align-top mr-3" alt="">/näSH/</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="about.html">About</a>
+
+            </div>
+        </div>
+    </nav>
+
+    
     <!-- Container Div -->
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">/näSH/</h1>
-            <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
-        </div>
-
         <!-- Start Row -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="card card-default">
                     <div class="card-header">
-                      <strong>dish</strong>
+                      <strong>What are we making today?</strong>
                     </div>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Row -->
-
-        <!-- Start Row -->
-        <div class="row mt-3 mb-3">
-            <div class="col-lg-12">
-                <div class="card card-default">
-                    <div class="card-header">
-                        <strong></strong>
-                    </div>
-                    <div class="card-body">
-
+                    <div class="card-body text-center">
+                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button> <br> <br>
+                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">I already have some ingredients</button>
                     </div>
                 </div>
             </div>
@@ -55,6 +61,13 @@
 
     </div>
     <!-- Close Container -->
+
+    <!-- Sticky Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">&copy; 2018 /näSH/ </span>
+        </div>
+    </footer>
 
 </body>
 
