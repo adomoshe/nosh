@@ -13,8 +13,8 @@
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/sticky-footer.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sticky-footer.css">
 </head>
 
 <body>
@@ -30,10 +30,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="about.html">About</a>
+            <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
             </div>
         </div>
     </nav>
@@ -46,7 +47,7 @@
             <div class="col-lg-12">
                 <div class="card card-default shadow">
                     <div class="card-header">
-                      <strong>dish</strong>
+                      <strong>What are we making today?</strong>
                     </div>
                     <div class="card-body text-center">
                             <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button> <br> <br>
@@ -65,7 +66,68 @@
                         <strong>Search by Dish:</strong>
                     </div>
                     <div class="card-body text-center">
-                        blahblabhlah
+                        <form>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="dish-input" placeholder="Dish Name">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="search-by-dish"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                        </form>
+                    </div>
+                        <!-- Start Row -->
+                        <div class="row mx-auto" id="dish-container">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                    <strong>Results:</strong>
+                                    </div>
+                                    <div class="card-body" id="dish-results">
+                                        Results Appear Here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                </div>
+            </div>
+        </div>
+        <!-- End Row -->
+
+        <!-- Start Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-default shadow">
+                    <div class="card-header">
+                        <strong>Search by Ingredients:</strong>
+                    </div>
+                    <div class="card-body">
+                        <form class='text-center'>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="ingredients-input" placeholder="Add Ingredients">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-3 text-center" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                        </form>
+                        <!-- Start Row -->
+                        <div class="row mx-auto">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-body text-center" id="ingredients-list">
+                                        Items will appear here
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-3" id="search-by-ingredients"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                                </div>
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                    <strong>Results:</strong>
+                                    </div>
+                                    <div class="card-body" id="ingredients-results">
+                                        Results Appear Here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
                     </div>
                 </div>
             </div>
