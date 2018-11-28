@@ -15,6 +15,11 @@ body {
     margin-bottom: 0px;
     /* border-bottom: 2px solid gray; */
     border-radius: 0 !important;
+    /* height: 10em; */
+    background-image: url(../images/photo-1482049016688-2d3e1b311543.jpg);
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .navbar {
@@ -33,10 +38,20 @@ body {
     margin-bottom: 1em;
 }
 
-#search-icon {
+.shadow {
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+}
+
+#fa-icon {
     margin-right: 0.5em;
 }
 
 #user-input {
+    width: 100%;
+}
+
+#dish-results {
     width: 100%;
 }

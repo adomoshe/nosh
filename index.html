@@ -31,11 +31,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="about.html">About</a>
-
+            <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
             </div>
         </div>
     </nav>
@@ -71,11 +71,11 @@
                             <div class="form-group mx-auto col-sm-8">
                                 <input type="text" class="form-control" id="user-input" placeholder="Dish Name">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="add-category"><i class="fas fa-search" id="search-icon"></i>Search</button>
+                            <button type="submit" class="btn btn-primary" id="add-category"><i class="fas fa-search" id="fa-icon"></i>Search</button>
                         </form>
                     </div>
                         <!-- Start Row -->
-                        <div class="row">
+                        <div class="row mx-auto" id="dish-results">
                             <div class="col-lg-12">
                                 <div class="card card-default">
                                     <div class="card-header">
@@ -100,9 +100,32 @@
                     <div class="card-header">
                         <strong>Search by Ingredients:</strong>
                     </div>
-                    <div class="card-body text-center">
-                        blahblabhlah
-                        blahblah
+                    <div class="card-body">
+                        <form class='text-center'>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="item-input" placeholder="Add Ingredients">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-3 text-center" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                        </form>
+                        <!-- Start Row -->
+                        <div class="row mx-auto" id="shopping-list">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-body text-center">
+                                        Items will appear here
+                                    </div>
+                                </div>
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                    <strong>Results:</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        Results Appear Here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
                     </div>
                 </div>
             </div>
