@@ -70,7 +70,13 @@
                             <div class="form-group mx-auto col-sm-8">
                                 <input type="text" class="form-control" id="dish-input" placeholder="Dish Name">
                             </div>
-                            <button type="submit" class="btn btn-primary" id="search-by-dish"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                            <div class="mx-auto checkboxes">
+                                <input type="checkbox" id="vegetarianSelector1" value="vegetarian">
+                                <label class="form-check-label mr-3" for="vegetarianSelector1">Vegetarian</label>
+                                <input type="checkbox" id="veganSelector1" value="vegan">
+                                <label class="form-check-label" for="veganSelector1">Vegan</label> <br>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-1" id="search-by-dish"><i class="fas fa-search" id="fa-icon"></i>Search</button>
                         </form>
                     </div>
                         <!-- Start Row -->
@@ -113,6 +119,12 @@
                                     <div class="card-body text-center" id="ingredient-insert">
                                         Items will appear here
                                     </div>
+                                </div>
+                                <div class="mx-auto text-center mb-1 checkboxes">
+                                    <input type="checkbox" id="vegetarianSelector2" value="vegetarian">
+                                    <label class="form-check-label mr-3" for="vegetarianSelector2">Vegetarian</label>
+                                    <input type="checkbox" id="veganSelector2" value="vegan">
+                                    <label class="form-check-label" for="veganSelector2">Vegan</label> <br>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary mb-3" id="search-by-ingredients"><i class="fas fa-search" id="fa-icon"></i>Search</button>
