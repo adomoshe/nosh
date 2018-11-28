@@ -7,20 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>
-        /näSH/ - Dynamic Recipe Assistant
+        /näSH/ - Shopping List
     </title>
 
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sticky-footer.css">
 </head>
 
 <body>
+
     <!-- Jumbotron Header -->
     <div class="jumbotron" id="logo-banner">
         <h1 class="text-center">/näSH/</h1>
-        <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
+        <h5 class="text-center"><small>Shopping List</small></h5>
     </div>   
     
     <!-- Navbar -->
@@ -31,9 +33,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="index.html">Home</a>
             <a class="nav-item nav-link" href="about.html">About</a>
-            <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
+            <a class="nav-item nav-link active" href="shoppinglist.html">Shopping List <span class="sr-only">(current)</span></a>
             </div>
         </div>
     </nav>
@@ -46,79 +48,21 @@
             <div class="col-lg-12">
                 <div class="card card-default shadow">
                     <div class="card-header">
-                      <strong>What are we making today?</strong>
-                    </div>
-                    <div class="card-body text-center">
-                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button> <br> <br>
-                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">I already have some ingredients</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Row -->
-
-        <!-- Start Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card card-default shadow">
-                    <div class="card-header">
-                        <strong>Search by Dish:</strong>
+                      <strong>Shopping List</strong>
                     </div>
                     <div class="card-body text-center">
                         <form>
                             <div class="form-group mx-auto col-sm-8">
-                                <input type="text" class="form-control" id="user-input" placeholder="Dish Name">
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="add-category"><i class="fas fa-search" id="fa-icon"></i>Search</button>
-                        </form>
-                    </div>
-                        <!-- Start Row -->
-                        <div class="row mx-auto" id="dish-results">
-                            <div class="col-lg-12">
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                    <strong>Results:</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        Results Appear Here
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Row -->
-                </div>
-            </div>
-        </div>
-        <!-- End Row -->
-
-        <!-- Start Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card card-default shadow">
-                    <div class="card-header">
-                        <strong>Search by Ingredients:</strong>
-                    </div>
-                    <div class="card-body">
-                        <form class='text-center'>
-                            <div class="form-group mx-auto col-sm-8">
                                 <input type="text" class="form-control" id="item-input" placeholder="Add Ingredients">
                             </div>
-                            <button type="submit" class="btn btn-primary mb-3 text-center" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                            <button type="submit" class="btn btn-primary mb-3" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
                         </form>
                         <!-- Start Row -->
                         <div class="row mx-auto" id="shopping-list">
                             <div class="col-lg-12">
                                 <div class="card card-default">
-                                    <div class="card-body text-center">
-                                        Items will appear here
-                                    </div>
-                                </div>
-                                <div class="card card-default">
-                                    <div class="card-header">
-                                    <strong>Results:</strong>
-                                    </div>
                                     <div class="card-body">
-                                        Results Appear Here
+                                        Items will appear here
                                     </div>
                                 </div>
                             </div>
@@ -129,9 +73,7 @@
             </div>
         </div>
         <!-- End Row -->
-
     </div>
-    <!-- Close Container -->
 
     <!-- Sticky Footer -->
     <footer class="footer">
