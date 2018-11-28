@@ -41,6 +41,19 @@ body {
     margin-bottom: 1em;
 }
 
+.card-body {
+    background-color: #ffd6d6;
+}
+
+.card-header {
+    background-color: #d4ffcc;
+}
+
+#the-navbar {
+    background-color: #d4ffcc;
+    color: #d4ffcc;
+}
+
 .shadow {
     -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
