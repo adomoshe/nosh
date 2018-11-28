@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>
-        /näSH/ - Dynamic Recipe Assistant
+        /näSH/ - Shopping List
     </title>
 
     <!-- We link our html to the Bootstrap CDN -->
@@ -22,7 +22,7 @@
     <!-- Jumbotron Header -->
     <div class="jumbotron" id="logo-banner">
         <h1 class="text-center">/näSH/</h1>
-        <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
+        <h5 class="text-center"><small>Shopping List</small></h5>
     </div>   
     
     <!-- Navbar -->
@@ -31,7 +31,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-item nav-link" href="index.html">Home</a>
             <a class="nav-item nav-link" href="about.html">About</a>
@@ -51,6 +51,23 @@
                       <strong>Shopping List</strong>
                     </div>
                     <div class="card-body text-center">
+                        <form>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="item-input" placeholder="Add Ingredients">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-3" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                        </form>
+                        <!-- Start Row -->
+                        <div class="row mx-auto" id="shopping-list">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-body">
+                                        Items will appear here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
                     </div>
                 </div>
             </div>
