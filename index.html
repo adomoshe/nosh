@@ -13,25 +13,45 @@
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sticky-footer.css">
 </head>
 
 <body>
+    <!-- Jumbotron Header -->
+    <div class="jumbotron" id="logo-banner">
+        <h1 class="text-center">/näSH/</h1>
+        <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
+    </div>   
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <a class="navbar-brand" href="#"><img src="assets/images/noshmini.png" width="30" height="30" class="d-inline-block align-top mr-3" alt="">/näSH/</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="about.html">About</a>
+            <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
+            </div>
+        </div>
+    </nav>
+
+    
     <!-- Container Div -->
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">/näSH/</h1>
-            <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
-        </div>
-
         <!-- Start Row -->
         <div class="row">
             <div class="col-lg-12">
-                <div class="card card-default">
+                <div class="card card-default shadow">
                     <div class="card-header">
-                      <strong></strong>
+                      <strong>What are we making today?</strong>
                     </div>
-                    <div class="card-body">
-
+                    <div class="card-body text-center">
+                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button> <br> <br>
+                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">I already have some ingredients</button>
                     </div>
                 </div>
             </div>
@@ -39,14 +59,75 @@
         <!-- End Row -->
 
         <!-- Start Row -->
-        <div class="row mt-3 mb-3">
+        <div class="row">
             <div class="col-lg-12">
-                <div class="card card-default">
+                <div class="card card-default shadow">
                     <div class="card-header">
-                        <strong></strong>
+                        <strong>Search by Dish:</strong>
+                    </div>
+                    <div class="card-body text-center">
+                        <form>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="dish-input" placeholder="Dish Name">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="search-by-dish"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                        </form>
+                    </div>
+                        <!-- Start Row -->
+                        <div class="row mx-auto">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                    <strong>Results:</strong>
+                                    </div>
+                                    <div class="card-body" id="dish-results">
+                                        Results Appear Here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                </div>
+            </div>
+        </div>
+        <!-- End Row -->
+
+        <!-- Start Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-default shadow">
+                    <div class="card-header">
+                        <strong>Search by Ingredients:</strong>
                     </div>
                     <div class="card-body">
-
+                        <form class='text-center'>
+                            <div class="form-group mx-auto col-sm-8">
+                                <input type="text" class="form-control" id="ingredients-input" placeholder="Add Ingredients">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-3 text-center" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                        </form>
+                        <!-- Start Row -->
+                        <div class="row mx-auto">
+                            <div class="col-lg-12">
+                                <div class="card card-default">
+                                    <div class="card-body text-center" id="ingredients-list">
+                                        Items will appear here
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mb-3" id="search-by-ingredients"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                                </div>
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                    <strong>Results:</strong>
+                                    </div>
+                                    <div class="card-body" id="ingredients-results">
+                                        Results Appear Here
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Row -->
                     </div>
                 </div>
             </div>
@@ -56,6 +137,13 @@
     </div>
     <!-- Close Container -->
 
+    <!-- Sticky Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">&copy; 2018 /näSH/ </span>
+        </div>
+    </footer>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -63,6 +151,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.0/moment.min.js"></script>
+<script src="assets/javascript/ingredients.js"></script>
 
 
 </html>
