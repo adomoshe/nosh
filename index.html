@@ -12,7 +12,8 @@
 
     <!-- We link our html to the Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/sticky-footer.css">
 </head>
@@ -22,24 +23,26 @@
     <div class="jumbotron" id="logo-banner">
         <h1 class="text-center">/näSH/</h1>
         <h5 class="text-center"><small>A Dynamic Recipe Assistant</small></h5>
-    </div>   
-    
+    </div>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-        <a class="navbar-brand" href="#"><img src="assets/images/noshmini.png" width="30" height="30" class="d-inline-block align-top mr-3" alt="">/näSH/</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav id="the-navbar" class="navbar navbar-expand-lg navbar-light shadow">
+        <a class="navbar-brand" href="#"><img src="assets/images/noshmini.png" width="30" height="30" class="d-inline-block align-top mr-3"
+                alt="">/näSH/</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="about.html">About</a>
-            <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+                <a class="nav-item nav-link" href="shoppinglist.html">Shopping List</a>
             </div>
         </div>
     </nav>
 
-    
+
     <!-- Container Div -->
     <div class="container">
         <!-- Start Row -->
@@ -47,11 +50,13 @@
             <div class="col-lg-12">
                 <div class="card card-default shadow">
                     <div class="card-header">
-                      <strong>What are we making today?</strong>
+                        <strong>What are we making today?</strong>
                     </div>
                     <div class="card-body text-center">
-                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button> <br> <br>
-                            <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">I already have <br>some ingredients</button>
+                        <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">Search by Dish</button>
+                        <br> <br>
+                        <button type="button" class="btn btn-secondary btn-lg fixed-btn" id="">I already have <br>some
+                            ingredients</button>
                     </div>
                 </div>
             </div>
@@ -76,23 +81,24 @@
                                 <input type="checkbox" id="veganSelector1" value="vegan">
                                 <label class="form-check-label" for="veganSelector1">Vegan</label> <br>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-1" id="search-by-dish"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                            <button type="submit" class="btn btn-primary mt-1" id="search-by-dish"><i class="fas fa-search"
+                                    id="fa-icon"></i>Search</button>
                         </form>
                     </div>
-                        <!-- Start Row -->
-                        <div class="row mx-auto" id="dish-container">
-                            <div class="col-lg-12">
-                                <div class="card card-default">
-                                    <div class="card-header">
+                    <!-- Start Row -->
+                    <div class="row mx-auto" id="dish-container">
+                        <div class="col-lg-12">
+                            <div class="card card-default">
+                                <div class="card-header">
                                     <strong>Results:</strong>
-                                    </div>
-                                    <div class="card-body" id="dish-results">
-                                        Results Appear Here
-                                    </div>
+                                </div>
+                                <div class="card-body" id="dish-results">
+                                    Results Appear Here
                                 </div>
                             </div>
                         </div>
-                        <!-- End Row -->
+                    </div>
+                    <!-- End Row -->
                 </div>
             </div>
         </div>
@@ -110,7 +116,8 @@
                             <div class="form-group mx-auto col-sm-8">
                                 <input type="text" class="form-control" id="ingredient-entered" placeholder="Add Ingredients">
                             </div>
-                            <button type="submit" class="btn btn-primary mb-3 text-center" id="ingredient-submit"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
+                            <button type="submit" class="btn btn-primary mb-3 text-center" id="ingredient-submit"><i
+                                    class="fas fa-plus" id="fa-icon"></i>Add to List</button>
                         </form>
                         <!-- Start Row -->
                         <div class="row mx-auto">
@@ -127,11 +134,12 @@
                                     <label class="form-check-label" for="veganSelector2">Vegan</label> <br>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary mb-3" id="search-by-ingredients"><i class="fas fa-search" id="fa-icon"></i>Search</button>
+                                    <button type="submit" class="btn btn-primary mb-3" id="search-by-ingredients"><i
+                                            class="fas fa-search" id="fa-icon"></i>Search</button>
                                 </div>
                                 <div class="card card-default">
                                     <div class="card-header">
-                                    <strong>Results:</strong>
+                                        <strong>Results:</strong>
                                     </div>
                                     <div class="card-body" id="ingredients-results">
                                         Results Appear Here
@@ -174,9 +182,12 @@
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.0/moment.min.js"></script>
 <script src="assets/javascript/ingredients.js"></script>
