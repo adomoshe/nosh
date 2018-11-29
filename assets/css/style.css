@@ -154,3 +154,14 @@ body {
     width: 100%;
     height: 600px;
 }
+
+.scroll-wrapper {
+	-webkit-overflow-scrolling: touch;
+  	overflow-y: scroll;
+
+	/* important:  dimensions or positioning here! */
+}
+
+.scroll-wrapper iframe {
+	/* nada! */
+}
