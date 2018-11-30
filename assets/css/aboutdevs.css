@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -14,7 +14,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+menu, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -23,15 +23,15 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, header, hgroup, menu, nav, section {
+HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, header, hgroup, menu, section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
 ol, ul {
-	/* list-style: circle; */
+	list-style: circle;
 }
 blockquote, q {
 	quotes: none;
@@ -44,7 +44,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+} */
 /* This is a CSS comment that doesn't have an effect on the style of the webpage */
 
 /*
@@ -55,7 +55,7 @@ table {
 body {
     /* background: #293f50; */
     /* color: #888; */
-    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   }
 
 
@@ -212,10 +212,6 @@ p a {
     vertical-align: top;
 }
 
-.testclass {
-    /* background-color: #67589e; */
-}
-
 /* Need to add Mobile Responsiveness */
 .footer-original {
     position: relative; left: -5.5in;    bottom: 0;
@@ -229,5 +225,14 @@ p a {
 
 .clean-list {
     list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
+.logo-fix {
+    vertical-align: middle;
 }
