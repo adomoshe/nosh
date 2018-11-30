@@ -142,3 +142,7 @@ body {
 .scroll-wrapper iframe {
 	/* nada! */
 }
+
+h1 {
+    font-family: 'Bungee', sans-sarif;
+}
