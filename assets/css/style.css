@@ -23,8 +23,6 @@ body {
     background-size: cover;
     color: white;
     text-shadow: 2px 2px 4px #000000;
-    font-family: 'Bungee', cursive;
-
 }
 
 .navbar {
@@ -41,13 +39,10 @@ body {
     border: 1px solid #3c3c3c;
     color: #3c3c3c;
     text-transform: uppercase;
-<<<<<<< HEAD
-=======
 }
 
 .fixed-btn:hover {
     background-color: #93a091;
->>>>>>> master
 }
 
 
@@ -56,13 +51,6 @@ body {
 }
 
 .card-body {
-<<<<<<< HEAD
-    background-color: #ffd6d6;
-}
-
-.card-header {
-    background-color: #d4ffcc;
-=======
     background-color: #F7F7F7;
 }
 
@@ -77,10 +65,8 @@ body {
 #dish-results,
 #ingredient-insert,
 #ingredients-results,
-#shopping-list,
-#map-container {
+#shopping-list {
     background-color: white;
->>>>>>> master
 }
 
 #the-navbar {
@@ -150,8 +136,4 @@ body {
   	overflow-y: scroll;
 
 	/* important:  dimensions or positioning here! */
-}
-
-.scroll-wrapper iframe {
-	/* nada! */
 }
