@@ -1,0 +1,69 @@
+.map-wrap {
+    width: 1024px;
+    margin: 20px auto;
+}    
+    
+#googleMap {
+    width: 48%;
+    height: 400px;
+    float: left;
+    margin-right: 20px;
+}
+
+#right-panel {
+    width: 48%;
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+
+.map-wrap {
+width: 100%;
+padding: 20px;
+}
+
+#googleMap,
+#right-panel {
+width: 100%;
+}
+
+#right-panel {
+margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 620px) {
+
+.map-wrap {
+width: 100%;
+padding: 20px;
+}
+
+#googleMap,
+#right-panel {
+width: 100%;
+}
+
+#right-panel {
+margin-top: 40px;
+}
+}
+
+/* Width at 168px and below */
+@media screen and (max-width: 468px) {
+.map-wrap {
+width: 100%;
+padding: 20px;
+}
+
+#googleMap,
+#right-panel {
+width: 100%;
+}
+
+#right-panel {
+margin-top: 40px;
+}
+}
+
+

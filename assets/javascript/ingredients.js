@@ -5,15 +5,22 @@
 // Inserting new buttons to div on card id=ingredient-insert
 // Button classes class=ingredient-btn on btn
 // Button on class will change when clicked 
+
+var dataValue = [];
 $("#ingredient-submit").on("click", function(event){
     event.preventDefault();
-    var newDiv = $("<div>")
-    var ingredientName = $("#ingredient-entered").val().trim()
-    var newButton = $("<button>");
-    newButton.addClass("ingredient-btn on btn")
-    newButton.text(ingredientName);
-    $("#ingredient-insert").append(newDiv).append(newButton);
-    $("#ingredient-entered").val("");
+    if ($("#ingredient-entered").val() !== "") {
+        var newDiv = $("<div>")
+        var ingredientName = $("#ingredient-entered").val().trim()
+        var newButton = $("<button>");
+        newButton.addClass("ingredient-btn on btn")
+        newButton.text(ingredientName);
+        dataValue.push(ingredientName);
+        console.log("dataValue arr: " + dataValue);
+        $("#search-by-ingredients").attr("data-value", dataValue);
+        $("#ingredient-insert").append(newDiv).append(newButton);
+        $("#ingredient-entered").val("");
+    };
 });
 
 // Buttons start off with .on class but when pressed will switch to .off classs
