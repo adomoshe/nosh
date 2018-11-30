@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/sticky-footer.css">
 </head>
 
 <body>
@@ -27,7 +26,7 @@
     </div>   
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <nav id="the-navbar" class="navbar navbar-expand-lg navbar-light shadow">
         <a class="navbar-brand" href="#"><img src="assets/images/noshmini.png" width="30" height="30" class="d-inline-block align-top mr-3"
                 alt="">/näSH/</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -62,10 +61,10 @@
                             <button type="submit" class="btn btn-primary mb-3" id="add-item"><i class="fas fa-plus" id="fa-icon"></i>Add to List</button>
                         </form>
                         <!-- Start Row -->
-                        <div class="row mx-auto" id="shopping-list">
+                        <div class="row mx-auto">
                             <div class="col-lg-12">
                                 <div class="card card-default">
-                                    <div class="card-body">
+                                    <div class="card-body" id="shopping-list">
                                         Items will appear here
                                     </div>
                                 </div>

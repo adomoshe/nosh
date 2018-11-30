@@ -39,18 +39,45 @@ body {
     border: 1px solid #3c3c3c;
     color: #3c3c3c;
     text-transform: uppercase;
+<<<<<<< HEAD
+=======
 }
+
+.fixed-btn:hover {
+    background-color: #93a091;
+>>>>>>> master
+}
+
 
 .card {
     margin-bottom: 1em;
 }
 
 .card-body {
+<<<<<<< HEAD
     background-color: #ffd6d6;
 }
 
 .card-header {
     background-color: #d4ffcc;
+=======
+    background-color: #F7F7F7;
+}
+
+.card-header {
+    background-color: #bcccb9;
+}
+
+#dish-container {
+    background-color: #F7F7F7;
+}
+
+#dish-results,
+#ingredient-insert,
+#ingredients-results,
+#shopping-list {
+    background-color: white;
+>>>>>>> master
 }
 
 #the-navbar {
@@ -90,55 +117,38 @@ body {
     background-color: #f5f5f5;
     font-size: smaller;
 }
+    
+.speaker-info {
+    border: 1px solid #dfe2e5;
+    border-radius: 5px;
+    margin-top: 88px;
+    padding-bottom: 22px;
+    text-align: center;
+  }
 
-/* [class^="btn-"] {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    @include size(100%, $btn-height);
-    max-width: $btn-width;
-    margin: 1rem auto;
-    text-transform: uppercase;
-    border: 1px solid currentColor;
-} */
-/* 
-.btn-2 {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    @include size(100%, $btn-height);
-    max-width: $btn-width;
-    margin: 1rem auto;
-    text-transform: uppercase;
-    border: 1px solid currentColor;
-    $btn-color: random-color($max:200);
-    $btn-color-dark: shade($btn-color, 40%);
-    color: tint($btn-color);
-    
-    &:before,
-    &:after {
-      content: '';
-      @include absolute(0,0,0,0);
-    }
-  
-    &:before {
-      right: -50px;
-      border-right: 50px solid transparent;
-      border-bottom: $btn-height solid $btn-color-dark;
-      transform: translateX(-100%);
-    }
-    
-    &:after {
-      left: -50px;
-      border-left: 50px solid transparent;
-      border-top: $btn-height solid $btn-color-dark;
-      transform: translateX(100%);
-    }
-  
-    &:hover {
-      color: tint($btn-color, 75%);
-  
-      &:before { transform: translateX(-49%); }
-      &:after { transform: translateX(49%); }
-    }
-  } */
+.speaker {
+    margin-bottom: 44px;
+}
+
+.speaker-info img{
+    border-radius: 50%;
+    height: 130px;
+    margin: -66px 0 22px 0;
+    vertical-align: top;
+}
+
+#recipe-frame {
+    width: 100%;
+    height: 650px;
+}
+
+.scroll-wrapper {
+	-webkit-overflow-scrolling: touch;
+  	overflow-y: scroll;
+
+	/* important:  dimensions or positioning here! */
+}
+
+.scroll-wrapper iframe {
+	/* nada! */
+}
