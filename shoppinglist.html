@@ -32,6 +32,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/map-style.css">
 </head>
 
 <body>
@@ -107,7 +108,10 @@
                             <div class="col-lg-12">
                                 <div class="card card-default">
                                     <div class="card-body" id="map-container">
-                                        Insert Map Here
+                                        <div class='map-wrap'>
+                                            <div id="googleMap"></div>
+                                            <div id="right-panel"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +141,10 @@
     crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.0/moment.min.js"></script>
-<script src="assets/javascript/ingredients.js"></script>
+<!-- <script src="assets/javascript/ingredients.js"></script> -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAaInlrMUOPqa8LCEwQIspeJbsfKFde8Y&libraries=places&callback=getLocation" async defer></script>
+
+<script src="assets/javascript/map-logic.js"></script>
 
 
 </html>
