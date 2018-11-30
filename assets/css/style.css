@@ -75,7 +75,8 @@ body {
 #dish-results,
 #ingredient-insert,
 #ingredients-results,
-#shopping-list {
+#shopping-list,
+#map-container {
     background-color: white;
 >>>>>>> master
 }
