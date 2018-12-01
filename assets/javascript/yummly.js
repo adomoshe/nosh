@@ -1,5 +1,4 @@
 
-
 var searchTerms = "Going to be grabbing a bunch of ingredients";
 var yummlyScore = [];
 var recipePic = [];
@@ -75,7 +74,6 @@ method: 'GET'
               recipeFirstList2.append(recipeFirstListItems2);
             };
 
-        console.log("might be an object: ", recipeFirstList2);
         recipeFirstDiv2.append(
           "<h6 class='recipe-name2'>" + result.name + "</h6>"
           + "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>"
@@ -84,7 +82,8 @@ method: 'GET'
           recipeFirstDiv2.append(recipeFirstList2);
         $("#recipe-details").append(recipeFirstDiv2);
 
-
+        $("#iframe").attr("src", result.source.sourceRecipeUrl);
+        $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
 
         console.log(result.ingredientLines);
         console.log(result.source.sourceDisplayName);
