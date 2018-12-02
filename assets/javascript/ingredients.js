@@ -7,13 +7,13 @@
 // Button on class will change when clicked 
 
 var dataValue = [];
-$("#ingredient-submit").on("click", function(event){
+$("#ingredient-submit").on("click", function (event) {
     event.preventDefault();
     if ($("#ingredient-entered").val() !== "") {
-        var newDiv = $("<div>")
-        var ingredientName = $("#ingredient-entered").val().trim()
+        var newDiv = $("<div>");
+        var ingredientName = capitalize($("#ingredient-entered").val().trim());
         var newButton = $("<button>");
-        newButton.addClass("ingredient-btn on btn")
+        newButton.addClass("ingredient-btn on btn");
         newButton.text(ingredientName);
         dataValue.push(ingredientName);
         console.log("dataValue arr: " + dataValue);
@@ -24,13 +24,17 @@ $("#ingredient-submit").on("click", function(event){
 });
 
 // Buttons start off with .on class but when pressed will switch to .off classs
-$(document).on("click", ".on", function() {
-        $(this).removeClass("on");
-        $(this).addClass("off");
+$(document).on("click", ".on", function () {
+    $(this).removeClass("on");
+    $(this).addClass("off");
 });
 
 // When pressed again these buttons will switch again from .off to .on
-$(document).on("click", ".off", function() {
-        $(this).addClass("on");
-        $(this).removeClass("off");
+$(document).on("click", ".off", function () {
+    $(this).addClass("on");
+    $(this).removeClass("off");
 });
+
+function capitalize(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+};
