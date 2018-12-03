@@ -241,7 +241,7 @@ p a {
 
 /* MOBILE RESPONSIVE SHIT */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     .developer-info {
         display:none;
     }
