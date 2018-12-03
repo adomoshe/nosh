@@ -14,12 +14,13 @@ $("#search-by-ingredients-card").hide();
 $("#recipe-details-card").hide();
 $("#lets-cook-card").hide();
 
-$("#i-have-ingredients-button").on("click", function() {
-    $("#what-are-we-making-card").fadeOut();
-    $("#search-by-ingredients-card").fadeIn();
+$("#i-have-ingredients-button").on("click", function () {
+    $("#what-are-we-making-card").fadeOut("slow", function () {
+        $("#search-by-ingredients-card").fadeIn();
+    });
 });
 
-$("#search-by-ingredients").on("click", function (specialty) {
+$("#search-by-ingredients").on("click", function () {
     console.log("dataValue: ", dataValue)
     var food = $(this).attr("data-value").trim().replace(/,/g, "+");
     console.log("Var food: " + food);
@@ -32,7 +33,7 @@ $("#search-by-ingredients").on("click", function (specialty) {
 
     if($("#vegetarianSelector2").is(":checked")) {
         specialty = vegetarianSearchKey;
-    }
+    };
 
     $.ajax({
         url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food+specialty}&requirePictures=true`,
@@ -84,10 +85,18 @@ $(document).on("click", ".recipe-name", function () {
             + "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + " mins</h6>"
             + "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv2.append(recipeFirstList2);
+        recipeFirstDiv2.append(
+            `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
+        );
         $("#recipe-details").append(recipeFirstDiv2);
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
-    $("#recipe-details-card").fadeIn();
-    $("#lets-cook-card").fadeIn();
+    $("#recipe-details-card").fadeIn("slow");
+});
+
+$(document).on("click", "#see-recipe-button", function() {
+    $("#recipe-details-card").fadeOut("slow", function() {
+        $("#lets-cook-card").fadeIn("slow");
+    });
 });
