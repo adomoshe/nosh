@@ -171,3 +171,8 @@ h1 {
 #logo-banner h5 {
     font-family: 'Fira Sans', sans-serif;
 }
+
+.ingredient-btn {
+    float: left;
+    margin-right: 10px;
+}
