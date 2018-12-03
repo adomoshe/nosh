@@ -26,11 +26,18 @@
             directionsDisplay.setPanel(document.getElementById('right-panel'));
             var bounds = new google.maps.LatLngBounds();
          
+            var pinColor = "33afff";
+            var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
+
             // Multiple Markers
             var marker = new google.maps.Marker({
                 position: myLatLng,
                 map: map,
-                title: 'My location'
+                title: 'My location',
+                icon: pinImage
             });
             var markers = [
                 ['Safeway on Shattuck Ave', 37.879390, -122.269954],

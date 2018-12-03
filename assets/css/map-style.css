@@ -19,7 +19,7 @@
 
 .map-wrap {
 width: 100%;
-padding: 20px;
+/* padding: 20px; */
 }
 
 #googleMap,
@@ -36,7 +36,7 @@ margin-top: 20px;
 
 .map-wrap {
 width: 100%;
-padding: 20px;
+/* padding: 20px; */
 }
 
 #googleMap,
@@ -53,7 +53,7 @@ margin-top: 40px;
 @media screen and (max-width: 468px) {
 .map-wrap {
 width: 100%;
-padding: 20px;
+/* padding: 20px; */
 }
 
 #googleMap,
