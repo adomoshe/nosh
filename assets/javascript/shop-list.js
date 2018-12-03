@@ -15,7 +15,7 @@ function renderTodos(list) {
 
       toDoClose.attr("data-to-do", i);
       toDoClose.addClass("checkbox");
-      toDoClose.text("X");
+      toDoClose.html("X");
 
       toDoItem = toDoItem.prepend(toDoClose);
 
