@@ -23,11 +23,12 @@ function renderTodos(list) {
 
   $("#add-item").on("click", function(event) {
     event.preventDefault();
-
+    if ($("#item-input").val() !== "") {
     var toDoTask = $("#item-input").val().trim();
 
     function capitalize(name) {
       return name.charAt(0).toUpperCase() + name.slice(1);
+    };
   };
   
   
