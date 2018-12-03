@@ -52,7 +52,7 @@ $("#search-by-dish").on("click", function (event) {
                 recipeFirstList.append(recipeFirstListItems);
             };
             recipeFirstDiv1.append(
-                "<h6 class='recipe-name'" + "data-name = " + foods1[i].id + " >" + foods1[i].recipeName + "</h6>" +
+                "<h6 class='recipe-name'" + "data-name1 = " + foods1[i].id + " >" + foods1[i].recipeName + "</h6>" +
                 "<h6 class='recipe-rating'>Yummly Rating: " + foods1[i].rating + "</h6>" +
                 "<h6 class='recipe-time'>Cooking Time: " + (foods1[i].totalTimeInSeconds / 60) + " mins</h6>" +
                 "<img class='recipe-image' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
@@ -66,7 +66,7 @@ $("#search-by-dish").on("click", function (event) {
 $(document).on("click", ".recipe-name", function () {
     $("#recipe-details").empty();
     $("#iframe").empty();
-    var searchInput = $(this).attr("data-name");
+    var searchInput = $(this).attr("data-name1");
     $.ajax({
         url: `https://api.yummly.com/v1/api/recipe/${searchInput}?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3`,
         method: 'GET'
