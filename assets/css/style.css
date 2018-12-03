@@ -185,8 +185,8 @@ h1 {
 .recipe-time,
 .recipe-image,
 .recipe-ingredient-item {
-    display: inline;
-    border: 2px solid gray;
+    /* display: inline; */
+    /* border: 2px solid gray; */
     padding: 5px;
 }
 
