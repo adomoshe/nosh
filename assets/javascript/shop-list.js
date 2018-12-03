@@ -26,7 +26,13 @@ function renderTodos(list) {
 
     var toDoTask = $("#item-input").val().trim();
 
-    list.push(toDoTask);
+    function capitalize(name) {
+      return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+  
+  
+
+    list.push(capitalize(toDoTask));
 
     renderTodos(list);
 
