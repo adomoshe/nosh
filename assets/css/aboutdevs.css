@@ -237,3 +237,15 @@ p a {
 .logo-fix {
     vertical-align: middle;
 }
+
+
+/* MOBILE RESPONSIVE SHIT */
+
+@media screen and (max-width: 400px) {
+    .developer-info {
+        display:none;
+    }
+    .col-2-3 {
+        width: 100%;
+    }
+}
