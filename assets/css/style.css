@@ -179,14 +179,15 @@ h1 {
 
 .recipe-name {
     font-family: 'Fira Sans', sans-sarif;
+    color: blue;
 }
 
 .recipe-rating,
 .recipe-time,
 .recipe-image,
 .recipe-ingredient-item {
-    display: inline;
-    border: 2px solid gray;
+    /* display: inline; */
+    /* border: 2px solid gray; */
     padding: 5px;
 }
 
@@ -222,6 +223,10 @@ h1 {
 .responsive {
     width: 40%;
     height: auto;
-    border: 5px solid #bcccb9;
+    /* border: 5px solid #bcccb9; */
     margin-bottom: 15px;
+}
+
+#see-recipe-button {
+    font-family: 'Bungee', sans-sarif;
 }
