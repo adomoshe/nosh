@@ -223,7 +223,7 @@ h1 {
 .responsive {
     width: 40%;
     height: auto;
-    border: 5px solid #bcccb9;
+    /* border: 5px solid #bcccb9; */
     margin-bottom: 15px;
 }
 
