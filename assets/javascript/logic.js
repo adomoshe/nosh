@@ -22,6 +22,7 @@ $("#search-by-dish-button").on("click", function () {
 $("#search-by-dish").on("click", function (event) {
     event.preventDefault();
     var food1 = $("#dish-input").val().trim();
+    $("#dish-input").val("");
     console.log("Var food: " + food1);
 
     var specialty1 = ""
@@ -91,7 +92,7 @@ $(document).on("click", ".recipe-name", function () {
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
-    $("#search-by-ingredients-card").fadeOut("slow", function () {
+    $("#search-by-dish-card").fadeOut("slow", function () {
         $("#recipe-details-card").fadeIn("slow");
     });
 });
