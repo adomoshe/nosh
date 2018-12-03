@@ -1,5 +1,5 @@
 
-// $("#shopping-list").hide();
+$("#shopping-list").hide();
 
 function renderTodos(list) {
     $("#shopping-list").empty(); 
