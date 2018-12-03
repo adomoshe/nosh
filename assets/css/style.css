@@ -179,14 +179,15 @@ h1 {
 
 .recipe-name {
     font-family: 'Fira Sans', sans-sarif;
+    color: blue;
 }
 
 .recipe-rating,
 .recipe-time,
 .recipe-image,
 .recipe-ingredient-item {
-    display: inline;
-    border: 2px solid gray;
+    /* display: inline; */
+    /* border: 2px solid gray; */
     padding: 5px;
 }
 
@@ -210,4 +211,27 @@ h1 {
 
 .recipe-ingredient-list2 {
     display: block;
+    width: 60%;
+    text-align: left;
 }
+
+.off {
+    /* display:none; */
+    opacity: 0.2;
+}
+
+.responsive {
+    width: 40%;
+    height: auto;
+    margin-bottom: 15px;
+    border: 2px solid #BCCCB9;
+
+}
+
+#see-recipe-button {
+    font-family: 'Bungee', sans-sarif;
+}
+
+/* .recipe-image2 {
+    width: 90%;
+} */

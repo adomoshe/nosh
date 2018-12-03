@@ -1,4 +1,6 @@
 
+$("#shopping-list").hide();
+
 function renderTodos(list) {
     $("#shopping-list").empty(); 
 
@@ -24,6 +26,9 @@ function renderTodos(list) {
   $("#add-item").on("click", function(event) {
     event.preventDefault();
     if ($("#item-input").val() !== "") {
+
+    $("#shopping-list").show();
+
     var toDoTask = $("#item-input").val().trim();
 
     function capitalize(name) {
