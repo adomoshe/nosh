@@ -75,7 +75,7 @@ $(document).on("click", ".recipe-name", function () {
     }).then(function (result) {
         console.log("Second API call: ", result);
         var recipeFirstDiv2 = $("<div class='recipe-result2'>");
-        var recipeFirstList2 = $("<ul class='recipe-ingredient-list2'>");
+        var recipeFirstList2 = $("<ul class='recipe-ingredient-list2 mx-auto'>");
         for (var x = 0; x < result.ingredientLines.length; x++) {
             var recipeFirstListItems2 = $("<li class='recipe-ingredient-item2'>");
             recipeFirstListItems2.text(result.ingredientLines[x]);
@@ -85,7 +85,7 @@ $(document).on("click", ".recipe-name", function () {
             "<h6 class='recipe-name2'>" + result.name + "</h6>" +
             "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
             "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + "</h6>" +
-            "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
+            "<img class='recipe-image2 responsive' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv2.append(recipeFirstList2);
         recipeFirstDiv2.append(
             `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
