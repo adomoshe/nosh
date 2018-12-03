@@ -26,12 +26,24 @@ body {
     font-family: 'Bungee', cursive;
 }
 
+.nav-item {
+    font-family: 'Bungee', cursive;
+    font-size: 12px;
+}
+
+.navbar-brand {
+    font-family: 'Bungee', cursive;
+}
+
 .navbar {
     margin-bottom: 2em;
     -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
     box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.3);
+    font-family: 'Rubik', sans-serif;
 }
+
+
 
 .navbar-toggler-icon {
     color: white;
@@ -78,6 +90,7 @@ body {
 #the-navbar {
     background-color: #bcccb9;
     color: #d4ffcc;
+    font-family: 'Rubik', sans-serif;
 }
 
 .shadow {
