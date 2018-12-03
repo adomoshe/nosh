@@ -1,341 +1,103 @@
+//When the seach button is pressed its data name is taken and stitched into a query string to be plugged into the initial API call
+//Initial API call returns dynamically generated divs for the first 5 recipes with a name, pic, yummly score, cooking time (mins) and a dynamic list of ingredients.
+//The user browses these options then clicks on the name of one of the options which enters that recipe id into the second api call
+//Second API call generates more detailed information about that specific recipe on the next card, loads an ifram of the recipe url source and gives the button underneath
+//an href of the same url to be opened in a different tab.
 
-const appId = 'b2c7c3f5';
-const appKey = 'dce4ead39898dd99d3afbd94e0a5dab7';
-const veganSearchKey = "&allowedDiet[]=386^Vegan";
-const vegetarianSearchKey = "&allowedDiet[]=387^Lacto-ovo vegetarian";
-let activeDietKey = "";
+const veganSearchKey1 = "&allowedDiet[]=386^Vegan";
+const vegetarianSearchKey1 = "&allowedDiet[]=387^Lacto-ovo vegetarian";
 
-$("#search-by-dish").on('click', function(event){
-    event.preventDefault();
 
-    // console.log($('#veganSelector').attr('checked'));
+$("#search-by-dish-card").hide();
+$("#recipe-details-card2").hide();
+$("#lets-cook-card").hide();
+$("#ingredients-result-card").hide();
 
-    // if($("#veganSelector").is(":checked")){ console.log("checked")}
-    // else{console.log("unchecked")};
-
-    console.log("hello");
-    $('.food').empty();
-    $('#dish-results').empty();
-    let food = $('#dish-input').val().trim();
-    food = food.split(" ");
-    buildString(food)
-
-    
+$("#search-by-dish-button").on("click", function () {
+    $("#what-are-we-making-card").fadeOut("slow", function () {
+        $("#search-by-dish-card").fadeIn();
+    });
 });
-// API call for yumilly recipes
-// $.ajax({
-//     url: "https://api.yummly.com/v1/api/recipe/Hot-Turkey-Salad-Sandwiches-Allrecipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24",
-//     method: "GET"
-//     // headers: { 'Authorization' : "Token 37898cb2ffb3e95284ad45e40879613c1ca4774e" },
-//     // processData: false
-// }).then(function(response){
-//     console.log(response);
-// });
 
+$("#search-by-dish").on("click", function (event) {
+    event.preventDefault();
+    var food1 = $("#dish-input").val().trim();
+    console.log("Var food: " + food1);
 
-// API call for yumilly diet dictionary
-// $.ajax({
+    var specialty1 = ""
 
-
-    
-//     url: 'http://api.yummly.com/v1/api/metadata/diet?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q=',
-//     method: "GET"
-
-// }).then(function(response){
-//     console.log(response)
-//     buildRecipes(response.matches)
-// });
-    
-// main API call
-function foodSearch(search){
-    console.log("plain API search activated");
-    let keyTerms = search;
-    $.ajax({
-        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms,
-        method: "GET"
-        
-        
-    }).then(function(response){
-        console.log('response ', response);
-        buildRecipes(response.matches);
-
-    });
-}
-
-// API call for vegetarian
-
-function foodSearchVegetarian(search){
-    console.log("vegetarian API search activated");
-    let keyTerms = search;
-    $.ajax({
-        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+vegetarianSearchKey,
-        method: "GET"
-        
-        
-    }).then(function(response){
-        console.log('response ', response);
-        buildRecipes(response.matches);
-
-    });
-}
-
-// API call for vegan
-
-function foodSearchVegan(search){
-    console.log("vegan API search activated");
-    let keyTerms = search;
-    $.ajax({
-        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+veganSearchKey,
-        method: "GET"
-        
-        
-    }).then(function(response){
-        console.log('response ', response);
-        buildRecipes(response.matches);
-
-    });
-}
-
-function buildArray(string){
-    var array = string.split(" ");
-//    console.log('array', array);
-
-}
-
-function buildString(array){
-    var queryString = '';
-    for(let i = 0; i < array.length; i++){
-        if(i === array.length - 1){
-            queryString += array[i];
-        } else {
-            queryString += array[i] + "+"
-        }
-    }
-
-    if($("#veganSelector1").is(":checked")){ 
-        console.log("vegan is checked");
-        foodSearchVegan(queryString);
-        
-    }
-    else if($("#vegetarianSelector1").is(":checked")){ 
-        console.log("vegetarian is checked");
-        foodSearchVegetarian(queryString);  
-    }
-    else{
-        foodSearch(queryString);
+    if ($("#veganSelector1").is(":checked")) {
+        specialty1 = veganSearchKey1;
     };
 
-    
+    if ($("#vegetarianSelector1").is(":checked")) {
+        specialty1 = vegetarianSearchKey1;
+    };
 
-
-    
-    
-}
-
-
-
-
-
-
-
-function buildRecipes(recipes){
-    // console.log(recipes);
-    let row1 = $(`<div class='row'>`);
-    let row2 = $(`<div class='row mt-4'>`);
-    let row3 = $(`<div class='row mt-4 mb-4'>`);
-    let container = $(`.food`);
-    for(var j = 0; j < 9; j++){
-        
-        let entry = recipes[j];
-        // console.log(entry.ingredients+"entry");
-        
-        let ingredientsArray = entry.ingredients;
-        // console.log(ingredientsArray);
-        // var healthLabels = recipes[j].recipe.healthLabels;
-//         var vegetarianStatus = (healthLabels.indexOf("Vegetarian"));
-//         // console.log(vegetarianStatus);
-
-        let recipeTitle = entry.recipeName;
-            
-        var splitTitle = buildArray(recipeTitle);
-        // console.log(splitTitle);
-
-//         let veganStatus = (healthLabels.indexOf("Vegan"));
-
-//         if($("#veganSelector").is(":checked")){
-//             if(veganStatus == -1){
-//                 console.log("animal products detected");
-//             }
-//             else{
-            
-//                 //  -----------else if vegetarian status is not -1---------------------
-                let ingHolder = $("<div>");
-                
-                if(j <= 2){
-                    let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-                                    <img class="card-img-top" src=${entry.smallImageUrls[0]} alt="Card image cap">
-                                    <div class="card-body text-center">
-                                        <h3 class="card-title">${entry.recipeName}</h3>  
-                                        ${ingredientsArray.map((item) => {
-                                        return "<p class='card-text'>"+ item + "</p>";
-                                        }).join('')}
-                                        <h5 class="card-text">${entry.source}</h5>
-                                        <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-                                    </div>
-                                </div>`
-                    $(row1).append(card);
-                } 
-                else if(j <= 5) {
-                    let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-                                <img class="card-img-top" src=${entry.image} alt="Card image cap">
-                                <div class="card-body text-center">
-                                    <h3 class="card-title">${entry.label}</h3>  
-                                    ${ingredientsArray.map((item) => {
-                                        return "<p class='card-text'>"+ item + "</p>";
-                                    }).join('')}
-                                    <h5 class="card-text">${entry.source}</h5>
-                                    <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-                                </div>
-                            </div>`
-                    $(row2).append(card);
-                } else {
-                    let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-                                <img class="card-img-top" src=${entry.image} alt="Card image cap">
-                                <div class="card-body text-center">
-                                    <h3 class="card-title">${entry.label}</h3>  
-                                    ${ingredientsArray.map((item) => {
-                                        return "<p class='card-text'>"+ item + "</p>";
-                                    }).join('')}
-                                    <h5 class="card-text">${entry.source}</h5>
-                                    <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-                                </div>
-                            </div>`
-                    $(".card-body").append(ingHolder)
-                    $(row3).append(card);
-                } 
-            $("#dish-results").append(row1)
-            $("#dish-results").append(row2)
-            $("#dish-results").append(row3)
+    $.ajax({
+        url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food1+specialty1}&requirePictures=true`,
+        method: 'GET'
+    }).then(function (result) {
+        $("#ingredients-results").empty();
+        console.log("First API call: ", result);
+        var foods1 = result.matches;
+        for (var i = 0; i < 5; i++) {
+            console.log("First API call listed results: ", foods1[i]);
+            var recipeFirstDiv1 = $("<div class='recipe-result'>");
+            var recipeFirstList = $("<ul class='recipe-ingredient-list'>");
+            for (var x = 0; x < foods1[i].ingredients.length; x++) {
+                var recipeFirstListItems = $("<li class='recipe-ingredient-item'>");
+                recipeFirstListItems.text(foods1[i].ingredients[x]);
+                recipeFirstList.append(recipeFirstListItems);
             };
-        }
-    
-            
-         
-//         else if($("#vegetarianSelector").is(":checked")){ 
+            recipeFirstDiv1.append(
+                "<h6 class='recipe-name'" + "data-name = " + foods1[i].id + " >" + foods1[i].recipeName + "</h6>" +
+                "<h6 class='recipe-rating'>Yummly Rating: " + foods1[i].rating + "</h6>" +
+                "<h6 class='recipe-time'>Cooking Time: " + (foods1[i].totalTimeInSeconds / 60) + " mins</h6>" +
+                "<img class='recipe-image' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
+            recipeFirstDiv1.append(recipeFirstList);
+            $("#dish-results").append(recipeFirstDiv1);
+        };
+        $("#recipe-details-card2").show();
+    });
+});
 
-//             if(vegetarianStatus == -1){
-//                 console.log("meat dish detected");
-//             }
-//         // 
-//             else{
-            
-//             //  -----------else if vegetarian status is not -1---------------------
-//             let ingHolder = $("<div>");
-            
-//             if(j <= 2){
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                                 <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                                 <div class="card-body text-center">
-//                                     <h3 class="card-title">${entry.label}</h3>  
-//                                     ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                     }).join('')}
-//                                     <h5 class="card-text">${entry.source}</h5>
-//                                     <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                                 </div>
-//                             </div>`
-//                 $(row1).append(card);
-//             } 
-//             else if(j <= 5) {
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                             <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                             <div class="card-body text-center">
-//                                 <h3 class="card-title">${entry.label}</h3>  
-//                                 ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                 }).join('')}
-//                                 <h5 class="card-text">${entry.source}</h5>
-//                                 <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                             </div>
-//                         </div>`
-//                 $(row2).append(card);
-//             } else {
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                             <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                             <div class="card-body text-center">
-//                                 <h3 class="card-title">${entry.label}</h3>  
-//                                 ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                 }).join('')}
-//                                 <h5 class="card-text">${entry.source}</h5>
-//                                 <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                             </div>
-//                         </div>`
-//                 $(".card-body").append(ingHolder)
-//                 $(row3).append(card);
-//             } 
-//         container.append(row1)
-//         container.append(row2)
-//         container.append(row3)
-//         };
-       
+$(document).on("click", ".recipe-name", function () {
+    $("#recipe-details").empty();
+    $("#iframe").empty();
+    var searchInput = $(this).attr("data-name");
+    $.ajax({
+        url: `https://api.yummly.com/v1/api/recipe/${searchInput}?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3`,
+        method: 'GET'
+    }).then(function (result) {
+        console.log("Second API call: ", result);
+        var recipeFirstDiv3 = $("<div class='recipe-result2'>");
+        var recipeFirstList2 = $("<ul class='recipe-ingredient-list2'>");
+        for (var x = 0; x < result.ingredientLines.length; x++) {
+            var recipeFirstListItems2 = $("<li class='recipe-ingredient-item'>");
+            recipeFirstListItems2.text(result.ingredientLines[x]);
+            recipeFirstList2.append(recipeFirstListItems2);
+        };
+        recipeFirstDiv3.append(
+            "<h6 class='recipe-name2'>" + result.name + "</h6>" +
+            "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
+            "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + "</h6>" +
+            "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
+        recipeFirstDiv3.append(recipeFirstList2);
+        recipeFirstDiv3.append(
+            `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
+        );
+        $("#recipe-details").append(recipeFirstDiv3);
+        $("#iframe").attr("src", result.source.sourceRecipeUrl);
+        $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
+    });
+    $("#search-by-ingredients-card").fadeOut("slow", function () {
+        $("#recipe-details-card").fadeIn("slow");
+    });
+});
 
-
-//         }
-
-
-// // ---else if vegetarian is unchecked-----
-//     else{ 
-//         let ingHolder = $("<div>");
-            
-//             if(j <= 2){
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                             <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                             <div class="card-body text-center">
-//                                 <h3 class="card-title">${entry.label}</h3>  
-//                                 ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                 }).join('')}
-//                                 <h5 class="card-text">${entry.source}</h5>
-//                                 <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                             </div>
-//                         </div>`
-//                 $(row1).append(card);
-//             } 
-//             else if(j <= 5) {
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                             <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                             <div class="card-body text-center">
-//                                 <h3 class="card-title">${entry.label}</h3>  
-//                                 ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                 }).join('')}
-//                                 <h5 class="card-text">${entry.source}</h5>
-//                                 <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                             </div>
-//                         </div>`
-//                 $(row2).append(card);
-//             } else {
-//                 let card = `<div class="card mx-auto grow m-3" style="width: 22rem;">
-//                             <img class="card-img-top" src=${entry.image} alt="Card image cap">
-//                             <div class="card-body text-center">
-//                                 <h3 class="card-title">${entry.label}</h3>  
-//                                 ${ingredientsArray.map((item) => {
-//                                     return "<p class='card-text'>"+ item + "</p>";
-//                                 }).join('')}
-//                                 <h5 class="card-text">${entry.source}</h5>
-//                                 <a href=${entry.url} class="btn btn-primary">Recipe Link</a>
-//                             </div>
-//                         </div>`
-//                 $(".card-body").append(ingHolder)
-//                 $(row3).append(card);
-//             }
-//         };
-//     container.append(row1)
-//     container.append(row2)
-//     container.append(row3)
-
-
-//     };
-// }
-        
+$(document).on("click", "#see-recipe-button", function () {
+    $("#recipe-details-card").fadeOut("slow", function () {
+        $("#lets-cook-card").fadeIn("slow");
+    });
+});
