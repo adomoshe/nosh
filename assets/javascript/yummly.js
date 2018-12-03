@@ -77,7 +77,7 @@ $(document).on("click", ".recipe-name", function () {
         var recipeFirstDiv2 = $("<div class='recipe-result2'>");
         var recipeFirstList2 = $("<ul class='recipe-ingredient-list2'>");
         for (var x = 0; x < result.ingredientLines.length; x++) {
-            var recipeFirstListItems2 = $("<li class='recipe-ingredient-item'>");
+            var recipeFirstListItems2 = $("<li class='recipe-ingredient-item2'>");
             recipeFirstListItems2.text(result.ingredientLines[x]);
             recipeFirstList2.append(recipeFirstListItems2);
         };
