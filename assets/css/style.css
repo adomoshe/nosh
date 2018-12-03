@@ -27,8 +27,9 @@ body {
 }
 
 .nav-item {
-    font-family: 'Bungee', cursive;
-    font-size: 12px;
+    /* font-family: 'Fira Sans', sans-serif; */
+    /* font-size: 12px; */
+    font-weight: 600;
 }
 
 .navbar-brand {
@@ -43,7 +44,9 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-
+.card-header {
+    font-family: 'Fira Sans', sans-serif;
+}
 
 .navbar-toggler-icon {
     color: white;
