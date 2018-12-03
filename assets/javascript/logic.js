@@ -5,6 +5,19 @@ const veganSearchKey = "&allowedDiet[]=386^Vegan";
 const vegetarianSearchKey = "&allowedDiet[]=387^Lacto-ovo vegetarian";
 let activeDietKey = "";
 
+
+$("#search-by-recipe-card").hide();
+$("#recipe-details-card").hide();
+$("#lets-cook-card").hide();
+
+
+$("#search-by-dish-button").on("click", function() {
+    $("#what-are-we-making-card").fadeOut();
+    $("#search-by-dish-card").fadeIn();
+});
+
+
+
 $("#search-by-dish").on('click', function(event){
     event.preventDefault();
 
