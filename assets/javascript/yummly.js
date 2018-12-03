@@ -10,7 +10,8 @@ $("#recipe-details-card").hide();
 $("#lets-cook-card").hide();
 
 $("#i-have-ingredients-button").on("click", function() {
-    $("#search-by-ingredients-card").show();
+    $("#what-are-we-making-card").fadeOut();
+    $("#search-by-ingredients-card").fadeIn();
 });
 
 $("#search-by-ingredients").on("click", function () {
@@ -72,6 +73,6 @@ $(document).on("click", ".recipe-name", function () {
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
-    $("#recipe-details-card").show();
-    $("#lets-cook-card").show();
+    $("#recipe-details-card").fadeIn();
+    $("#lets-cook-card").fadeIn();
 });
