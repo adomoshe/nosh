@@ -4,11 +4,48 @@
 //The user browses these options then clicks on the name of one of the options which enters that recipe id into the second api call
 //Second API call generates mroe detailed information about that specific recipe on the next card, loads an ifram of the recipe url source and gives the button underneath
 //an href of the same url to be opened in a different tab.
+const veganSearchKey = "&allowedDiet[]=386^Vegan";
+const vegetarianSearchKey = "&allowedDiet[]=387^Lacto-ovo vegetarian";
+
 
 $("#search-by-ingredients").on("click", function () {
     console.log("dataValue: ", dataValue)
     var food = $(this).attr("data-value").trim().replace(/,/g, "+");
     console.log("Var food: " + food);
+
+// ajax vegan ---
+    if($("#veganSelector2").is(":checked")){
+        $.ajax({
+            url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food}&requirePictures=true`,
+            method: 'GET'
+        }).then(function (result) {
+            $("#ingredients-results").empty();
+            console.log("First API call: ", result);
+            var foods = result.matches;
+            for (var i = 0; i < 5; i++) {
+                console.log("First API call listed results: ", foods[i]);
+                var recipeFirstDiv = $("<div class='recipe-result'>");
+                var recipeFirstList = $("<ul class='recipe-ingredient-list'>");
+                    for (var x = 0; x < foods[i].ingredients.length; x++) {
+                        var recipeFirstListItems = $("<li class='recipe-ingredient-item'>");
+                        recipeFirstListItems.text(foods[i].ingredients[x]);
+                        recipeFirstList.append(recipeFirstListItems);
+                    };
+                recipeFirstDiv.append(
+                     "<h6 class='recipe-name'" + "data-name = " + foods[i].id + " >" + foods[i].recipeName + "</h6>"
+                    + "<h6 class='recipe-rating'>Yummly Rating: " + foods[i].rating + "</h6>"
+                    + "<h6 class='recipe-time'>Cooking Time: " + (foods[i].totalTimeInSeconds / 60) + " mins</h6>"
+                    + "<img class='recipe-image' src=" + foods[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
+                recipeFirstDiv.append(recipeFirstList);
+                $("#ingredients-results").append(recipeFirstDiv);
+            };
+        dataValue = [];
+
+    });
+    }
+
+else if($("#vegetarianSelector2").is(":checked")){
+// ajax vegetarian ---- 
 
     $.ajax({
         url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food}&requirePictures=true`,
@@ -35,8 +72,12 @@ $("#search-by-ingredients").on("click", function () {
             $("#ingredients-results").append(recipeFirstDiv);
         };
         dataValue = [];
-    });
+    
 });
+}
+
+// ajax plain-----
+else(){
 
 $(document).on("click", ".recipe-name", function () {
     $("#recipe-details").empty();
@@ -64,4 +105,6 @@ $(document).on("click", ".recipe-name", function () {
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
+
 });
+}
