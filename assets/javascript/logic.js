@@ -55,7 +55,7 @@ $("#search-by-dish").on("click", function (event) {
                 "<h6 class='recipe-name'" + "data-name1 = " + foods1[i].id + " >" + foods1[i].recipeName + "</h6>" +
                 "<h6 class='recipe-rating'>Yummly Rating: " + foods1[i].rating + "</h6>" +
                 "<h6 class='recipe-time'>Cooking Time: " + (foods1[i].totalTimeInSeconds / 60) + " mins</h6>" +
-                "<img class='recipe-image' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
+                "<img class='recipe-image responsive' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
             recipeFirstDiv1.append(recipeFirstList);
             $("#dish-results").append(recipeFirstDiv1);
         };
