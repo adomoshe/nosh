@@ -12,7 +12,7 @@ function renderTodos(list) {
       var toDoClose = $("<button>");
 
       toDoClose.attr("data-to-do", i);
-      toDoClose.addClass("checkbox ");
+      toDoClose.addClass("checkbox");
       toDoClose.text("X");
 
       toDoItem = toDoItem.prepend(toDoClose);
