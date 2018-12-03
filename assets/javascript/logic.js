@@ -51,7 +51,7 @@ function foodSearch(search){
     console.log("plain API search activated");
     let keyTerms = search;
     $.ajax({
-        url: 'http://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms,
+        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms,
         method: "GET"
         
         
@@ -68,7 +68,7 @@ function foodSearchVegetarian(search){
     console.log("vegetarian API search activated");
     let keyTerms = search;
     $.ajax({
-        url: 'http://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+vegetarianSearchKey,
+        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+vegetarianSearchKey,
         method: "GET"
         
         
@@ -85,7 +85,7 @@ function foodSearchVegan(search){
     console.log("vegan API search activated");
     let keyTerms = search;
     $.ajax({
-        url: 'http://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+veganSearchKey,
+        url: 'https://api.yummly.com/v1/api/recipes?_app_id=549c0393&_app_key=de9d1e52c106afb7e246dfc95a616c24&q='+keyTerms+veganSearchKey,
         method: "GET"
         
         
