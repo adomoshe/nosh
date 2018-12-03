@@ -223,10 +223,15 @@ h1 {
 .responsive {
     width: 40%;
     height: auto;
-    /* border: 5px solid #bcccb9; */
     margin-bottom: 15px;
+    border: 2px solid #BCCCB9;
+
 }
 
 #see-recipe-button {
     font-family: 'Bungee', sans-sarif;
+}
+
+.recipe-image2 {
+    width: 90%;
 }
