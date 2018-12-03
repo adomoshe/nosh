@@ -176,3 +176,38 @@ h1 {
     float: left;
     margin-right: 10px;
 }
+
+.recipe-name {
+    font-family: 'Fira Sans', sans-sarif;
+}
+
+.recipe-rating,
+.recipe-time,
+.recipe-image,
+.recipe-ingredient-item {
+    display: inline;
+    border: 2px solid gray;
+    padding: 5px;
+}
+
+.recipe-result {
+    margin-bottom: 3em;
+}
+
+.recipe-image {
+    display: none;
+}
+
+.recipe-name2 {
+    font-family: 'Bungee', sans-sarif;
+    font-size: 24px;
+}
+
+.recipe-rating2,
+.recipe-time2 {
+    font-family: 'Fira Sans', sans-sarif;
+}
+
+.recipe-ingredient-list2 {
+    display: block;
+}
