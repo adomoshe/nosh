@@ -55,7 +55,7 @@ $("#search-by-dish").on("click", function (event) {
                 "<h6 class='recipe-name'" + "data-name1 = " + foods1[i].id + " >" + foods1[i].recipeName + "</h6>" +
                 "<h6 class='recipe-rating'>Yummly Rating: " + foods1[i].rating + "</h6>" +
                 "<h6 class='recipe-time'>Cooking Time: " + (foods1[i].totalTimeInSeconds / 60) + " mins</h6>" +
-                "<img class='recipe-image' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
+                "<img class='recipe-image responsive' src=" + foods1[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
             recipeFirstDiv1.append(recipeFirstList);
             $("#dish-results").append(recipeFirstDiv1);
         };
@@ -83,7 +83,7 @@ $(document).on("click", ".recipe-name", function () {
             "<h6 class='recipe-name2'>" + result.name + "</h6>" +
             "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
             "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + "</h6>" +
-            "<img class='recipe-image2' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
+            "<img class='recipe-image2 responsive' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv3.append(recipeFirstList2);
         recipeFirstDiv3.append(
             `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
