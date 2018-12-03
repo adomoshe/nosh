@@ -7,9 +7,12 @@
 // Button on class will change when clicked 
 
 var dataValue = [];
+$("#ingredient-insert").hide();
+
 $("#ingredient-submit").on("click", function (event) {
     event.preventDefault();
     if ($("#ingredient-entered").val() !== "") {
+        $("#ingredient-insert").show();
         var newDiv = $("<div>");
         var ingredientName = capitalize($("#ingredient-entered").val().trim());
         var newButton = $("<button>");
