@@ -1,5 +1,3 @@
-
-
 //When the seach button is pressed its data name is taken and stitched into a query string to be plugged into the initial API call
 //Initial API call returns dynamically generated divs for the first 5 recipes with a name, pic, yummly score, cooking time (mins) and a dynamic list of ingredients.
 //The user browses these options then clicks on the name of one of the options which enters that recipe id into the second api call
@@ -31,7 +29,7 @@ $("#search-by-ingredients").on("click", function () {
         specialty = veganSearchKey;
     };
 
-    if($("#vegetarianSelector2").is(":checked")) {
+    if ($("#vegetarianSelector2").is(":checked")) {
         specialty = vegetarianSearchKey;
     };
 
@@ -52,10 +50,10 @@ $("#search-by-ingredients").on("click", function () {
                 recipeFirstList.append(recipeFirstListItems);
             };
             recipeFirstDiv.append(
-                "<h6 class='recipe-name'" + "data-name = " + foods[i].id + " >" + foods[i].recipeName + "</h6>"
-                + "<h6 class='recipe-rating'>Yummly Rating: " + foods[i].rating + "</h6>"
-                + "<h6 class='recipe-time'>Cooking Time: " + (foods[i].totalTimeInSeconds / 60) + " mins</h6>"
-                + "<img class='recipe-image' src=" + foods[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
+                "<h6 class='recipe-name'" + "data-name = " + foods[i].id + " >" + foods[i].recipeName + "</h6>" +
+                "<h6 class='recipe-rating'>Yummly Rating: " + foods[i].rating + "</h6>" +
+                "<h6 class='recipe-time'>Cooking Time: " + (foods[i].totalTimeInSeconds / 60) + " mins</h6>" +
+                "<img class='recipe-image' src=" + foods[i].imageUrlsBySize['90'] + " alt='ingredient picture'>");
             recipeFirstDiv.append(recipeFirstList);
             $("#ingredients-results").append(recipeFirstDiv);
         };
@@ -80,10 +78,10 @@ $(document).on("click", ".recipe-name", function () {
             recipeFirstList2.append(recipeFirstListItems2);
         };
         recipeFirstDiv2.append(
-            "<h6 class='recipe-name2'>" + result.name + "</h6>"
-            + "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>"
-            + "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + " mins</h6>"
-            + "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
+            "<h6 class='recipe-name2'>" + result.name + "</h6>" +
+            "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
+            "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + " mins</h6>" +
+            "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv2.append(recipeFirstList2);
         recipeFirstDiv2.append(
             `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
@@ -92,11 +90,13 @@ $(document).on("click", ".recipe-name", function () {
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
-    $("#recipe-details-card").fadeIn("slow");
+    $("#search-by-ingredients-card").fadeOut("slow", function () {
+        $("#recipe-details-card").fadeIn("slow");
+    });
 });
 
-$(document).on("click", "#see-recipe-button", function() {
-    $("#recipe-details-card").fadeOut("slow", function() {
+$(document).on("click", "#see-recipe-button", function () {
+    $("#recipe-details-card").fadeOut("slow", function () {
         $("#lets-cook-card").fadeIn("slow");
     });
 });
