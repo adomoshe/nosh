@@ -1,9 +1,14 @@
 
+
 //When the seach button is pressed its data name is taken and stitched into a query string to be plugged into the initial API call
 //Initial API call returns dynamically generated divs for the first 5 recipes with a name, pic, yummly score, cooking time (mins) and a dynamic list of ingredients.
 //The user browses these options then clicks on the name of one of the options which enters that recipe id into the second api call
-//Second API call generates mroe detailed information about that specific recipe on the next card, loads an ifram of the recipe url source and gives the button underneath
+//Second API call generates more detailed information about that specific recipe on the next card, loads an ifram of the recipe url source and gives the button underneath
 //an href of the same url to be opened in a different tab.
+
+const veganSearchKey = "&allowedDiet[]=386^Vegan";
+const vegetarianSearchKey = "&allowedDiet[]=387^Lacto-ovo vegetarian";
+
 
 $("#search-by-ingredients-card").hide();
 $("#recipe-details-card").hide();
@@ -14,13 +19,23 @@ $("#i-have-ingredients-button").on("click", function() {
     $("#search-by-ingredients-card").fadeIn();
 });
 
-$("#search-by-ingredients").on("click", function () {
+$("#search-by-ingredients").on("click", function (specialty) {
     console.log("dataValue: ", dataValue)
     var food = $(this).attr("data-value").trim().replace(/,/g, "+");
     console.log("Var food: " + food);
 
+    var specialty = ""
+
+    if ($("#veganSelector2").is(":checked")) {
+        specialty = veganSearchKey;
+    };
+
+    if($("#vegetarianSelector2").is(":checked")) {
+        specialty = vegetarianSearchKey;
+    }
+
     $.ajax({
-        url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food}&requirePictures=true`,
+        url: `https://api.yummly.com/v1/api/recipes?_app_id=c99b39ed&_app_key=d9c01aaa6e3051a79404d54485a08dc3&q=${food+specialty}&requirePictures=true`,
         method: 'GET'
     }).then(function (result) {
         $("#ingredients-results").empty();
