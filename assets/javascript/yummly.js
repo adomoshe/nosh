@@ -5,6 +5,14 @@
 //Second API call generates mroe detailed information about that specific recipe on the next card, loads an ifram of the recipe url source and gives the button underneath
 //an href of the same url to be opened in a different tab.
 
+$("#search-by-ingredients-card").hide();
+$("#recipe-details-card").hide();
+$("#lets-cook-card").hide();
+
+$("#i-have-ingredients-button").on("click", function() {
+    $("#search-by-ingredients-card").show();
+});
+
 $("#search-by-ingredients").on("click", function () {
     console.log("dataValue: ", dataValue)
     var food = $(this).attr("data-value").trim().replace(/,/g, "+");
@@ -64,4 +72,6 @@ $(document).on("click", ".recipe-name", function () {
         $("#iframe").attr("src", result.source.sourceRecipeUrl);
         $("#recipe-not-loading").attr("href", result.source.sourceRecipeUrl);
     });
+    $("#recipe-details-card").show();
+    $("#lets-cook-card").show();
 });
