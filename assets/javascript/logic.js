@@ -83,7 +83,7 @@ $(document).on("click", ".recipe-name", function () {
             "<h6 class='recipe-name2'>" + result.name + "</h6>" +
             "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
             "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + "</h6>" +
-            "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
+            "<img class='recipe-image2' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv3.append(recipeFirstList2);
         recipeFirstDiv3.append(
             `<button type="button" class="btn btn-secondary btn-lg" id="see-recipe-button">See the Recipe!</button>`
