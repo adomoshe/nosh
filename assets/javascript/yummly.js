@@ -1,3 +1,5 @@
+
+
 //When the seach button is pressed its data name is taken and stitched into a query string to be plugged into the initial API call
 //Initial API call returns dynamically generated divs for the first 5 recipes with a name, pic, yummly score, cooking time (mins) and a dynamic list of ingredients.
 //The user browses these options then clicks on the name of one of the options which enters that recipe id into the second api call
@@ -11,6 +13,7 @@ const vegetarianSearchKey = "&allowedDiet[]=387^Lacto-ovo vegetarian";
 $("#search-by-ingredients-card").hide();
 $("#recipe-details-card").hide();
 $("#lets-cook-card").hide();
+$("#ingredients-result-card").hide();
 
 $("#i-have-ingredients-button").on("click", function () {
     $("#what-are-we-making-card").fadeOut("slow", function () {
@@ -57,6 +60,7 @@ $("#search-by-ingredients").on("click", function () {
             recipeFirstDiv.append(recipeFirstList);
             $("#ingredients-results").append(recipeFirstDiv);
         };
+        $("#ingredients-result-card").show();
         dataValue = [];
     });
 });
@@ -80,7 +84,7 @@ $(document).on("click", ".recipe-name", function () {
         recipeFirstDiv2.append(
             "<h6 class='recipe-name2'>" + result.name + "</h6>" +
             "<h6 class='recipe-rating2'>Yummly Rating: " + result.rating + "</h6>" +
-            "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + " mins</h6>" +
+            "<h6 class='recipe-time2'>Cooking Time: " + result.totalTime + "</h6>" +
             "<img class='recipe-image' src=" + result.images[0].hostedLargeUrl + " alt='ingredient picture'>");
         recipeFirstDiv2.append(recipeFirstList2);
         recipeFirstDiv2.append(

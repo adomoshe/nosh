@@ -27,14 +27,20 @@ $("#ingredient-submit").on("click", function (event) {
 $(document).on("click", ".on", function () {
     $(this).removeClass("on");
     $(this).addClass("off");
+    var spliceIndex = dataValue.indexOf($(this).text());
+    dataValue.splice(spliceIndex, 1);
+    $("#search-by-ingredients").attr("data-value", dataValue);
 });
 
 // When pressed again these buttons will switch again from .off to .on
 $(document).on("click", ".off", function () {
     $(this).addClass("on");
     $(this).removeClass("off");
+    dataValue.push($(this).text());
+    $("#search-by-ingredients").attr("data-value", dataValue);
 });
 
 function capitalize(name) {
     return name.charAt(0).toUpperCase() + name.slice(1);
 };
+
