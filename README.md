@@ -1,5 +1,7 @@
-# project1
+# Nosh
 First project for coding bootcamp
+
+Live site can be accessed here: https://adomoshe.github.io/project1/
 
 Nosh is a recipe searching app that filters by dish or by ingredients. First step: choose what you want to cook. Nosh will then show you the nearest place you can buy the ingredients you need.
 
