@@ -3,7 +3,7 @@ First project for coding bootcamp
 
 Live site can be accessed here: https://adomoshe.github.io/nosh
 
-Nosh is a recipe searching app that filters by dish or by ingredients. First step: choose what you want to cook. Nosh will then show you the nearest place you can buy the ingredients you need.
+Nosh is a recipe searching app that filters by dish or by ingredients. Choose a recipe by selecting ingredients you have at home or by a specific dish. Nosh will display relevant recipes from Yummly then show the user grocery stores in their area as well as use the browser's local storage to store a grocery list.
 
 # APIs
 
